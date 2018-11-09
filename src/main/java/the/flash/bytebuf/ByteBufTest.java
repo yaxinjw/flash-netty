@@ -5,6 +5,7 @@ import io.netty.buffer.ByteBufAllocator;
 
 public class ByteBufTest {
     public static void main(String[] args) {
+        // 这里有几种获取buffer的方式，比如unpool
         ByteBuf buffer = ByteBufAllocator.DEFAULT.buffer(9, 100);
 
         print("allocate ByteBuf(9, 100)", buffer);
