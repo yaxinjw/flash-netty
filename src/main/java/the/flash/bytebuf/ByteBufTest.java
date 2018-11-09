@@ -46,15 +46,16 @@ public class ByteBufTest {
 
     private static void print(String action, ByteBuf buffer) {
         System.out.println("after ===========" + action + "============");
-        System.out.println("capacity(): " + buffer.capacity());
-        System.out.println("maxCapacity(): " + buffer.maxCapacity());
-        System.out.println("readerIndex(): " + buffer.readerIndex());
-        System.out.println("readableBytes(): " + buffer.readableBytes());
-        System.out.println("isReadable(): " + buffer.isReadable());
-        System.out.println("writerIndex(): " + buffer.writerIndex());
-        System.out.println("writableBytes(): " + buffer.writableBytes());
-        System.out.println("isWritable(): " + buffer.isWritable());
-        System.out.println("maxWritableBytes(): " + buffer.maxWritableBytes());
+        System.out.println("容量---capacity(): " + buffer.capacity());
+        System.out.println("最大容量---maxCapacity(): " + buffer.maxCapacity());
+        System.out.println("读指针位置---readerIndex(): " + buffer.readerIndex());
+        System.out.println("可读的字节数---readableBytes(): " + buffer.readableBytes());
+        System.out.println("是否可读---isReadable(): " + buffer.isReadable());
+        System.out.println("写指针位置---writerIndex(): " + buffer.writerIndex());
+        System.out.println("可写字节数---writableBytes(): " + buffer.writableBytes());
+        System.out.println("是否可写---isWritable(): " + buffer.isWritable());
+        // 注意这句话最大可写字节数，区别WritableBytes，当发现已经写到capacity位置时，netty会扩容到最大容量（如果支持的话）
+        System.out.println("最大可写字节数---maxWritableBytes(): " + buffer.maxWritableBytes());
         System.out.println();
     }
 }
